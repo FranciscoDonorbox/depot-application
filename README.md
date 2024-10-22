@@ -25,5 +25,5 @@ Before running the Depot application, ensure you have the following stacks on th
 
 - **Ruby**
 - **Rails**
-- **Postgresql** or **SQLite**
+- **Postgresql**
 
