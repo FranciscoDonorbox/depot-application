@@ -12,7 +12,7 @@
 !/.env*.erb
 
 # Ignore SimpleCov coverage reports
-coverage/*
+/coverage/*
 
 # Ignore all logfiles and tempfiles.
 /log/*
