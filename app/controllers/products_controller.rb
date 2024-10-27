@@ -55,6 +55,18 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_path, status: :see_other, notice: "Product was successfully destroyed." }
       format.json { head :no_content }
     end
+
+  rescue ActiveRecord::RecordNotDestroyed
+    respond_to do |format|
+      format.html {
+        redirect_to products_path,
+        alert: "Product could not be deleted as it is referenced by line items."
+      }
+      format.json { render json: {
+        error: "Product could not be deleted as it is referenced by line items.",
+        status: :unprocessable_entity
+      } }
+    end
   end
 
   private
