@@ -29,12 +29,13 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_26_185848) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
+    t.string "title", null: false
+    t.text "description", null: false
     t.string "image_url"
     t.decimal "price", precision: 8, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_products_on_title", unique: true
   end
 
   add_foreign_key "line_items", "carts"
