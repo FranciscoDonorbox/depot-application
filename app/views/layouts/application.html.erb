@@ -20,7 +20,7 @@
 
     <section class="flex">
       <nav class="bg-green-900 p-6">
-        <% if @cart && !@cart.line_items.empty? %>
+        <% if @cart && @cart.line_items.any? %>
           <div id="cart" class="bg-white rounded-2">
             <%= render @cart %>
           </div>
